@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d74dd06b-9b25-414d-b505-d50fa2f25fc1" name="terminal.intrid.ru" url="http://intrid.ru">
+        <fileTransfer rootFolder="/www/terminal.intrid.ru" host="intrid.ru" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
