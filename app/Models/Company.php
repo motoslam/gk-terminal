@@ -18,6 +18,10 @@ class Company extends Model
         'blocked'
     ];
 
+    protected $casts = [
+        'blocked' => 'boolean'
+    ];
+
     public function vehicles()
     {
         return $this->hasMany(Vehicle::class);

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -31,8 +32,19 @@ class Vehicle extends Model
         'target'                       # Цель въезда (импорт/экспорт)
     ];
 
+    protected $casts = [
+        'arrivaldate' => 'datetime',
+        'closingdatedelivery' => 'datetime',
+        'inningsdt' => 'datetime',
+        'releasedt' => 'datetime',
+        'dateappointmentinspection' => 'datetime',
+        'enddateinspectionfact' => 'datetime',
+        'datedeparture' => 'datetime',
+    ];
+
     public function company()
     {
         return $this->belongsTo(Company::class);
     }
+
 }

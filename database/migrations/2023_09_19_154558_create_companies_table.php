@@ -17,7 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->id();
             $table->string('code')->nullable();
             $table->string('name');
-            $table->string('inn');
+            $table->string('inn')->unique();
             $table->string('kpp');
             $table->boolean('blocked')->default(false);
             $table->softDeletes();
