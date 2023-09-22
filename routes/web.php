@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReactController;
+use App\Http\Controllers\LoginController;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +16,14 @@ use App\Http\Controllers\ReactController;
 |
 */
 
-Route::get('/test', function(){
+
+Route::get('/test', function () {
     return json_encode([
         [
-            'docnum' => '17211',
-            'counterpartyname' => 'АГРОФИРМА ЕЛЕЦКИЙ ООО',
-            'counterpartyinn' => '4807056746',
-            'counterpartykpp' => '480701001',
+            'docnum' => '17264',
+            'counterpartyname' => 'АВИКА',
+            'counterpartyinn' => '4825005381',
+            'counterpartykpp' => '482201001',
             'numbercar' => 'В434СН',
             'numbertrailer' => 'ВР5347',
             'arrivaldate' => '18.04.2023 20:55:13',
@@ -81,6 +84,8 @@ Route::get('/test', function(){
         ],
     ]);
 });
+
+Route::post('/signin', [LoginController::class, 'authenticate']);
 
 # Роутинг осуществляется React приложением
 Route::get('/{path?}', [ReactController::class, 'show'])

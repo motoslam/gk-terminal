@@ -17,9 +17,9 @@ class CreateVehiclesTable extends Migration
             $table->id();
             $table->foreignId('company_id');
             $table->string('docnum')->unique();
-            $table->string('numbercar');
+            $table->string('numbercar')->nullable();
             $table->string('numbertrailer')->nullable();
-            $table->dateTime('arrivaldate');
+            $table->dateTime('arrivaldate')->nullable();
             $table->string('notesguard')->nullable();
             $table->dateTime('closingdatedelivery')->nullable();
             $table->string('locationcar');
