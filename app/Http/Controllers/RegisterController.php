@@ -6,6 +6,7 @@ use App\Traits\RespondsWithHttpStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use App\Models\User;
 
 class RegisterController extends Controller
@@ -15,8 +16,9 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $credentials = $request->validate([
-            'name' => 'required',
+            'name' => ['required', 'string'],
             'email' => ['required', 'email'],
+            'role' => ['required', 'integer', Rule::in(array_keys(User::ROLES))]
         ]);
 
         $password = Str::random(8);

@@ -22,7 +22,11 @@ class LoginController extends Controller
 
             $request->session()->regenerate();
 
-            return $this->success('success');
+            $request->user()->tokens()->delete();
+
+            $token = $request->user()->createToken('auth');
+
+            return $this->success('success', ['token' => $token->plainTextToken]);
         }
 
         return $this->failure(

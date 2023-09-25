@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return $this->role == 3;
     }
+
+    public function getRole()
+    {
+        return self::ROLES[$this->role];
+    }
 }
