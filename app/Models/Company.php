@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Company extends Model
 {
     use SoftDeletes, HasFactory;
-
     protected $fillable = [
         'code',
         'name',
@@ -21,6 +20,8 @@ class Company extends Model
     protected $casts = [
         'blocked' => 'boolean'
     ];
+
+    const PAGE_SIZE = 15;
 
     public function vehicles()
     {
