@@ -6,6 +6,7 @@ use App\Http\Controllers\ReactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\UserController;
 use App\Mail\RegisterMail;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
@@ -24,10 +25,16 @@ use Illuminate\Support\Facades\Mail;
 Route::post('/signin', [LoginController::class, 'authenticate']);
 
 Route::middleware('auth:sanctum')->prefix('spa')->group(function () {
+
     Route::get('/user', function (Request $request) {
         return auth()->check() ? $request->user() : response()->json(['message' => 'Unauthorized.'], 401);
     });
-    Route::post('/user/register', [RegisterController::class, 'register']);
+
+    Route::middleware('admin')->prefix('users')->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('users.index');
+        Route::post('/register', [RegisterController::class, 'register'])->name('users.register');
+    });
+
 
     Route::get('/companies', [CompanyController::class, 'index']);
 });
