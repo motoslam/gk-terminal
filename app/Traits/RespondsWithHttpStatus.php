@@ -17,7 +17,7 @@ trait RespondsWithHttpStatus
     {
         return response([
             'success' => false,
-            'message' => $message,
+            'message' => is_array($message) ? json_encode($message) : $message,
         ], $status);
     }
 }

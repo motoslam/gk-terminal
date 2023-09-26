@@ -46,6 +46,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $appends = ['role_text'];
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -73,5 +75,10 @@ class User extends Authenticatable
     public function getRole()
     {
         return self::ROLES[$this->role];
+    }
+
+    public function getRoleTextAttribute($value)
+    {
+        return [1 => 'ADMIN', 2 => 'MANAGER', 3 => 'EMPLOYEE'][$this->role];
     }
 }

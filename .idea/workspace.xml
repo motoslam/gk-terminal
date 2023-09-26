@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="some fixed">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="IsAdmin middleware and UserController">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/LicenseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/License.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/License.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/RespondsWithHttpStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/RespondsWithHttpStatus.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +191,7 @@
       <workItem from="1695716069929" duration="2191000" />
       <workItem from="1695722620810" duration="2350000" />
       <workItem from="1695728387599" duration="257000" />
-      <workItem from="1695729181818" duration="7688000" />
+      <workItem from="1695729181818" duration="9866000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -263,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695739539237</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="IsAdmin middleware and UserController">
+      <option name="closed" value="true" />
+      <created>1695741877367</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695741877367</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +299,8 @@
     <MESSAGE value="Register complete" />
     <MESSAGE value="Companies" />
     <MESSAGE value="some fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="some fixed" />
+    <MESSAGE value="IsAdmin middleware and UserController" />
+    <option name="LAST_COMMIT_MESSAGE" value="IsAdmin middleware and UserController" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

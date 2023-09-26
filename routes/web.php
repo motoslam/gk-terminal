@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LicenseController;
 use App\Mail\RegisterMail;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
@@ -35,6 +36,10 @@ Route::middleware('auth:sanctum')->prefix('spa')->group(function () {
         Route::post('/register', [RegisterController::class, 'register'])->name('users.register');
     });
 
+    Route::prefix('license')->group(function () {
+        Route::get('/', [LicenseController::class, 'show'])->name('license.show');
+        Route::post('/create', [LicenseController::class, 'create'])->name('license.create');
+    });
 
     Route::get('/companies', [CompanyController::class, 'index']);
 });

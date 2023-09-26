@@ -14,6 +14,10 @@ class License extends Model
         'license'
     ];
 
+    public static $rules = [
+        'license' => ['required']
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
