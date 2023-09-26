@@ -15,7 +15,6 @@ class ImportController extends Controller
 
     protected $vehiclesToUpdate;
 
-    # Импорт транспортных средств
     public function make(Request $request)
     {
         $vehicles = $request->json()->all();

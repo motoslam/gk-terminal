@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RegisterMail;
 use App\Models\User;
 
 class RegisterController extends Controller
@@ -15,20 +17,36 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        $credentials = $request->validate([
-            'name' => ['required', 'string'],
-            'email' => ['required', 'email'],
-            'role' => ['required', 'integer', Rule::in(array_keys(User::ROLES))]
-        ]);
+        if (auth()->user()->role == 1) {
 
-        $password = Str::random(8);
+            $credentials = $request->validate([
+                'name' => ['required', 'string'],
+                'email' => ['required', 'email'],
+                'role' => ['required', 'integer', Rule::in(array_keys(User::ROLES_FOR_CREATE))]
+            ]);
 
-        $credentials['password'] = Hash::make($password);
+            $password = Str::random(8);
 
-        $user = User::create($credentials);
+            $credentials['password'] = Hash::make($password);
 
-        auth()->login($user);
+            $user = User::create($credentials);
 
-        return $this->success('success');
+            if ($user) {
+                try {
+                    Mail::to($user)->send(new RegisterMail([
+                        'password' => $password,
+                        'role' => $user->role
+                    ]));
+                } catch (\Exception $e) {
+                    // do nothing or log this
+                    // TODO: log this fail
+                }
+            }
+
+            return $this->success('success');
+
+        }
+
+        return $this->failure('Access denied.', 403);
     }
 }

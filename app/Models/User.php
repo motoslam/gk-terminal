@@ -18,6 +18,12 @@ class User extends Authenticatable
         3 => "Сотрудник",
     ];
 
+    # Список пользователей, которых можно создавать через интерфейс
+    const ROLES_FOR_CREATE = [
+        2 => "Менеджер",
+        3 => "Сотрудник",
+    ];
+
     /**
      * The attributes that are mass assignable.
      *

@@ -16,10 +16,6 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 # Точка входа POST запроса на импорт
 Route::post('/import', [ImportController::class, 'make'])
     ->middleware('import')

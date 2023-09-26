@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="Register complete">
+    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="Companies">
+      <change afterPath="$PROJECT_DIR$/app/Mail/RegisterMail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +190,11 @@
       <workItem from="1695385018024" duration="7502000" />
       <workItem from="1695632415522" duration="1927000" />
       <workItem from="1695635750371" duration="6791000" />
-      <workItem from="1695648762126" duration="7547000" />
+      <workItem from="1695648762126" duration="8804000" />
+      <workItem from="1695716069929" duration="2191000" />
+      <workItem from="1695722620810" duration="2350000" />
+      <workItem from="1695728387599" duration="257000" />
+      <workItem from="1695729181818" duration="5768000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -234,7 +244,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695637567171</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Companies">
+      <option name="closed" value="true" />
+      <created>1695657140427</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695657140427</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Companies">
+      <option name="closed" value="true" />
+      <created>1695657150323</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695657150323</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,7 +284,8 @@
     <MESSAGE value="Import complete" />
     <MESSAGE value="Auth complete" />
     <MESSAGE value="Register complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Register complete" />
+    <MESSAGE value="Companies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Companies" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
