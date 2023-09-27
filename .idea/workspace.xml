@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="IsAdmin middleware and UserController">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/LicenseController.php" afterDir="false" />
+    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="LicenseController added">
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Traits/Blockable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/License.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/License.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/RespondsWithHttpStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/RespondsWithHttpStatus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +195,10 @@
       <workItem from="1695716069929" duration="2191000" />
       <workItem from="1695722620810" duration="2350000" />
       <workItem from="1695728387599" duration="257000" />
-      <workItem from="1695729181818" duration="9866000" />
+      <workItem from="1695729181818" duration="10306000" />
+      <workItem from="1695812628785" duration="433000" />
+      <workItem from="1695814908929" duration="5319000" />
+      <workItem from="1695824763975" duration="5873000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -273,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695741877367</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="LicenseController added">
+      <option name="closed" value="true" />
+      <created>1695744100983</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1695744100983</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +315,8 @@
     <MESSAGE value="Companies" />
     <MESSAGE value="some fixed" />
     <MESSAGE value="IsAdmin middleware and UserController" />
-    <option name="LAST_COMMIT_MESSAGE" value="IsAdmin middleware and UserController" />
+    <MESSAGE value="LicenseController added" />
+    <option name="LAST_COMMIT_MESSAGE" value="LicenseController added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

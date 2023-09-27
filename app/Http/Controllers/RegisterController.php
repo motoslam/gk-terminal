@@ -43,7 +43,7 @@ class RegisterController extends Controller
                 }
             }
 
-            return $this->success('success');
+            return $this->success('Success.');
 
         }
 

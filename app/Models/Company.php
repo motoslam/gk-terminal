@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Company extends Model
 {
     use SoftDeletes, HasFactory;
+
     protected $fillable = [
         'code',
         'name',
@@ -26,6 +27,11 @@ class Company extends Model
     public function vehicles()
     {
         return $this->hasMany(Vehicle::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 
 }

@@ -55,7 +55,13 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'blocked' => 'boolean',
     ];
+
+    public function companies()
+    {
+        return $this->belongsToMany(Company::class);
+    }
 
     public function isAdmin()
     {
