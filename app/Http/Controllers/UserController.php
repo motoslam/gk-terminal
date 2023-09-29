@@ -7,24 +7,21 @@ use Illuminate\Support\Facades\Validator;
 use App\Traits\RespondsWithHttpStatus;
 use App\Models\User;
 use App\Http\Resources\UserResource;
+use App\Http\Filters\UserFilter;
 
 class UserController extends Controller
 {
     use RespondsWithHttpStatus;
 
-    public $responseData = [];
-
-    public function index(Request $request)
+    public function index(UserFilter $filter)
     {
-        $query = User::where('role', '<>', 1);
+        $users = UserResource::collection(
+            User::notAdmin()
+                ->filter($filter)
+                ->get()
+        );
 
-        if ($request->filled('role')) {
-            $query->where('role', $request->get('role'));
-        }
-
-        $users = $query->get();
-
-        return $this->success('Success.', UserResource::collection($users));
+        return $this->success('Success.', $users);
     }
 
     public function block(User $user)
@@ -45,11 +42,19 @@ class UserController extends Controller
     {
         return $this->success('Success.', new UserResource($user));
     }
-    public function store()
-    {
-    }
 
-    public function destroy()
+    public function destroy(User $user)
     {
+        if(auth()->user()->isAdmin()) {
+
+            $user->companies()->detach();
+
+            $user->delete();
+
+            return $this->success('Success.');
+
+        }
+
+        return $this->failure('Access denied.', 403);
     }
 }

@@ -3,14 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Laravel\Sanctum\HasApiTokens;
+use App\Traits\Filterable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, Filterable;
 
     const ROLES = [
         1 => "Администратор",
@@ -58,32 +61,37 @@ class User extends Authenticatable
         'blocked' => 'boolean',
     ];
 
-    public function companies()
+    public function companies(): BelongsToMany
     {
         return $this->belongsToMany(Company::class);
     }
 
-    public function isAdmin()
+    public function isAdmin(): bool
     {
         return $this->role == 1;
     }
 
-    public function isManager()
+    public function isManager(): bool
     {
         return $this->role == 2;
     }
 
-    public function isEmployee()
+    public function isEmployee(): bool
     {
         return $this->role == 3;
     }
 
-    public function getRole()
+    public function scopeNotAdmin($query)
+    {
+        $query->where('role', '<>', 1);
+    }
+
+    public function getRole(): string
     {
         return self::ROLES[$this->role];
     }
 
-    public function getRoleTextAttribute($value)
+    public function getRoleTextAttribute($value): string
     {
         return [1 => 'ADMIN', 2 => 'MANAGER', 3 => 'EMPLOYEE'][$this->role];
     }

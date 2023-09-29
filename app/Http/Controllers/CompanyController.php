@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\RespondsWithHttpStatus;
+use App\Http\Resources\CompanyResource;
 use App\Models\Company;
 use App\Models\User;
 
@@ -16,20 +17,9 @@ class CompanyController extends Controller
 
     public function index(Request $request)
     {
-        $companies = Company::all();
+        $companies = CompanyResource::collection(Company::all());
 
-        foreach ($companies as $company) {
-            $this->responseData[] = [
-                'id' => $company->id,
-                'innerNumber' => $company->inn,
-                'name' => $company->name,
-                'employeeIds' => (array)$company->users->pluck('id')->all(),
-                'isBlocked' => $company->blocked,
-                'isChecked' => false
-            ];
-        }
-
-        return $this->success('Success.', $this->responseData);
+        return $this->success('Success.', $companies);
     }
 
     public function attach(Request $request)

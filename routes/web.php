@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LicenseController;
+use App\Http\Controllers\VehicleController;
 use App\Mail\RegisterMail;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
@@ -39,6 +40,7 @@ Route::middleware('auth:sanctum')->prefix('spa')->group(function () {
         Route::post('/register', [RegisterController::class, 'register'])->name('users.register');
         Route::post('/{user}/block', [UserController::class, 'block'])->name('users.block');
         Route::post('/{user}/unblock', [UserController::class, 'unblock'])->name('users.unblock');
+        Route::delete('/{user}/delete', [UserController::class, 'destroy'])->name('users.delete');
     });
 
     # Компании (контрагенты)
@@ -57,6 +59,10 @@ Route::middleware('auth:sanctum')->prefix('spa')->group(function () {
         Route::post('/create', [LicenseController::class, 'create'])->name('license.create');
     });
 
+    # Транспортные средства
+    Route::prefix('vehicles')->group(function () {
+        Route::get('/', [VehicleController::class, 'index'])->name('vehicles.index');
+    });
 });
 
 # Роутинг осуществляется React приложением

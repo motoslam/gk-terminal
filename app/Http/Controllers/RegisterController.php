@@ -21,7 +21,7 @@ class RegisterController extends Controller
 
             $credentials = $request->validate([
                 'name' => ['required', 'string'],
-                'email' => ['required', 'email'],
+                'email' => ['required', 'email', 'unique:users'],
                 'role' => ['required', 'integer', Rule::in(array_keys(User::ROLES_FOR_CREATE))]
             ]);
 
