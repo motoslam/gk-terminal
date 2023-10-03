@@ -8,6 +8,7 @@ use App\Traits\RespondsWithHttpStatus;
 use App\Http\Resources\CompanyResource;
 use App\Models\Company;
 use App\Models\User;
+use App\Http\Filters\CompanyFilter;
 
 class CompanyController extends Controller
 {
@@ -15,9 +16,9 @@ class CompanyController extends Controller
 
     public $responseData = [];
 
-    public function index(Request $request)
+    public function index(CompanyFilter $filter)
     {
-        $companies = CompanyResource::collection(Company::all());
+        $companies = CompanyResource::collection(Company::filter($filter)->get());
 
         return $this->success('Success.', $companies);
     }

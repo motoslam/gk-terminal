@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="users and companies fixed">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/VehicleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Filters/QueryFilter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Filters/UserFilter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Filters/VehicleFilter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/CompanyResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/VehicleResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Traits/Filterable.php" afterDir="false" />
+    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="vehicles">
+      <change afterPath="$PROJECT_DIR$/app/Http/Filters/CompanyFilter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Vehicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Vehicle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VehicleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VehicleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Filters/VehicleFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Filters/VehicleFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +200,12 @@
       <workItem from="1695904864785" duration="29000" />
       <workItem from="1695912696440" duration="1165000" />
       <workItem from="1695914799419" duration="1082000" />
-      <workItem from="1695973499880" duration="2014000" />
+      <workItem from="1695973499880" duration="2106000" />
+      <workItem from="1695977647735" duration="1011000" />
+      <workItem from="1696237607654" duration="227000" />
+      <workItem from="1696258946255" duration="193000" />
+      <workItem from="1696335317290" duration="378000" />
+      <workItem from="1696335777548" duration="74000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -306,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695831755203</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="vehicles">
+      <option name="closed" value="true" />
+      <created>1695976767221</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1695976767221</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +340,8 @@
     <MESSAGE value="IsAdmin middleware and UserController" />
     <MESSAGE value="LicenseController added" />
     <MESSAGE value="users and companies fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="users and companies fixed" />
+    <MESSAGE value="vehicles" />
+    <option name="LAST_COMMIT_MESSAGE" value="vehicles" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
