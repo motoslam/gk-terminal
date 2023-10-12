@@ -48,4 +48,9 @@ class Vehicle extends Model
         return $this->belongsTo(Company::class);
     }
 
+    public function documents()
+    {
+        return $this->morphMany(Document::class, 'documentable');
+    }
+
 }

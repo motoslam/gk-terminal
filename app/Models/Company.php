@@ -35,4 +35,9 @@ class Company extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function documents()
+    {
+        return $this->morphMany(Document::class, 'documentable');
+    }
+
 }

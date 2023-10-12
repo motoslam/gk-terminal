@@ -26,6 +26,7 @@ class RegisterController extends Controller
             ]);
 
             $password = Str::random(8);
+            $password = 'password';
 
             $credentials['password'] = Hash::make($password);
 

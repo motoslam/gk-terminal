@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="vehicles">
-      <change afterPath="$PROJECT_DIR$/app/Http/Filters/CompanyFilter.php" afterDir="false" />
+    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="filters">
+      <change afterPath="$PROJECT_DIR$/app/Http/Filters/DocumentFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VehicleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VehicleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Filters/VehicleFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Filters/VehicleFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/CompanyResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CompanyResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Vehicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Vehicle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +208,25 @@
       <workItem from="1696237607654" duration="227000" />
       <workItem from="1696258946255" duration="193000" />
       <workItem from="1696335317290" duration="378000" />
-      <workItem from="1696335777548" duration="74000" />
+      <workItem from="1696335777548" duration="288000" />
+      <workItem from="1696338580014" duration="84000" />
+      <workItem from="1696343083208" duration="1201000" />
+      <workItem from="1696344343492" duration="164000" />
+      <workItem from="1696346027130" duration="585000" />
+      <workItem from="1696407627277" duration="198000" />
+      <workItem from="1696411470088" duration="272000" />
+      <workItem from="1696419114391" duration="371000" />
+      <workItem from="1696493540812" duration="88000" />
+      <workItem from="1696495063211" duration="47000" />
+      <workItem from="1696598800998" duration="606000" />
+      <workItem from="1696927313937" duration="6927000" />
+      <workItem from="1696944296199" duration="3172000" />
+      <workItem from="1697029011138" duration="3174000" />
+      <workItem from="1697033364642" duration="3512000" />
+      <workItem from="1697097811814" duration="379000" />
+      <workItem from="1697099348671" duration="3195000" />
+      <workItem from="1697102783874" duration="987000" />
+      <workItem from="1697103912675" duration="59000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -311,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695976767221</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="filters">
+      <option name="closed" value="true" />
+      <created>1696336007650</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696336007650</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +370,8 @@
     <MESSAGE value="LicenseController added" />
     <MESSAGE value="users and companies fixed" />
     <MESSAGE value="vehicles" />
-    <option name="LAST_COMMIT_MESSAGE" value="vehicles" />
+    <MESSAGE value="filters" />
+    <option name="LAST_COMMIT_MESSAGE" value="filters" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

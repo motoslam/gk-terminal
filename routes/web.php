@@ -9,6 +9,8 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LicenseController;
 use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Resources\UserResource;
 use App\Mail\RegisterMail;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
@@ -34,23 +36,30 @@ Route::middleware('auth:sanctum')->prefix('spa')->group(function () {
     });
 
     # Пользователи
-    Route::middleware('admin')->prefix('users')->group(function () {
+    Route::prefix('users')->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('users.index');
         Route::get('/{user}', [UserController::class, 'show'])->name('users.show');
-        Route::post('/register', [RegisterController::class, 'register'])->name('users.register');
-        Route::post('/{user}/block', [UserController::class, 'block'])->name('users.block');
-        Route::post('/{user}/unblock', [UserController::class, 'unblock'])->name('users.unblock');
-        Route::delete('/{user}/delete', [UserController::class, 'destroy'])->name('users.delete');
+        Route::post('/register', [RegisterController::class, 'register'])->middleware('admin')->name('users.register');
+        Route::post('/{user}/block', [UserController::class, 'block'])->middleware('admin')->name('users.block');
+        Route::post('/{user}/unblock', [UserController::class, 'unblock'])->middleware('admin')->name('users.unblock');
+        Route::delete('/{user}/delete', [UserController::class, 'destroy'])->middleware('admin')->name('users.delete');
     });
 
     # Компании (контрагенты)
-    Route::middleware('admin')->prefix('companies')->group(function () {
+    Route::prefix('companies')->group(function () {
+
         Route::get('/', [CompanyController::class, 'index'])->name('companies.index');
-        Route::post('/attach', [CompanyController::class, 'attach'])->name('companies.attach');
-        Route::post('/detach', [CompanyController::class, 'detach'])->name('companies.detach');
-        Route::post('/{company}/block', [CompanyController::class, 'block'])->name('companies.block');
-        Route::post('/{company}/unblock', [CompanyController::class, 'unblock'])->name('companies.unblock');
-        Route::delete('/{company}/delete', [CompanyController::class, 'destroy'])->name('companies.delete');
+        Route::get('/{company}', [CompanyController::class, 'show'])->name('companies.show');
+        Route::get('/{company}/documents', [CompanyController::class, 'documents'])->name('companies.documents');
+
+        Route::middleware('admin')->group(function () {
+            Route::post('/attach', [CompanyController::class, 'attach'])->name('companies.attach');
+            Route::post('/detach', [CompanyController::class, 'detach'])->name('companies.detach');
+            Route::post('/{company}/block', [CompanyController::class, 'block'])->name('companies.block');
+            Route::post('/{company}/unblock', [CompanyController::class, 'unblock'])->name('companies.unblock');
+            Route::delete('/{company}/delete', [CompanyController::class, 'destroy'])->name('companies.delete');
+        });
+
     });
 
     # Лицензия
@@ -63,6 +72,13 @@ Route::middleware('auth:sanctum')->prefix('spa')->group(function () {
     Route::prefix('vehicles')->group(function () {
         Route::get('/', [VehicleController::class, 'index'])->name('vehicles.index');
     });
+
+    # Документы
+    Route::prefix('documents')->group(function () {
+        Route::get('/', [DocumentController::class, 'index'])->name('documents.index');
+        Route::post('/upload', [DocumentController::class, 'upload'])->name('documents.upload');
+    });
+
 });
 
 # Роутинг осуществляется React приложением

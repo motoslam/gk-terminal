@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\RespondsWithHttpStatus;
 use App\Http\Resources\CompanyResource;
+use App\Http\Resources\DocumentResource;
 use App\Models\Company;
 use App\Models\User;
 use App\Http\Filters\CompanyFilter;
@@ -18,9 +19,16 @@ class CompanyController extends Controller
 
     public function index(CompanyFilter $filter)
     {
-        $companies = CompanyResource::collection(Company::filter($filter)->get());
+        return $this->success('Success.',
+            CompanyResource::collection(
+                Company::filter($filter)->get()
+            )
+        );
+    }
 
-        return $this->success('Success.', $companies);
+    public function show(Company $company)
+    {
+        return $this->success('Success.', new CompanyResource($company));
     }
 
     public function attach(Request $request)
@@ -88,5 +96,14 @@ class CompanyController extends Controller
         $company->delete();
 
         return $this->success('Success.');
+    }
+
+    public function documents(Company $company)
+    {
+        return $this->success('Success.',
+            DocumentResource::collection(
+                $company->documents
+            )
+        );
     }
 }
