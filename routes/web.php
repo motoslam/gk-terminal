@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LicenseController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\OrderController;
 use App\Http\Resources\UserResource;
 use App\Mail\RegisterMail;
 use Illuminate\Support\Str;
@@ -77,8 +78,15 @@ Route::middleware('auth:sanctum')->prefix('spa')->group(function () {
     Route::prefix('documents')->group(function () {
         Route::get('/', [DocumentController::class, 'index'])->name('documents.index');
         Route::post('/upload', [DocumentController::class, 'upload'])->name('documents.upload');
+        Route::delete('/{document}', [DocumentController::class, 'destroy'])->name('documents.destroy');
     });
 
+    # Заявки
+    Route::prefix('orders')->group(function () {
+        //Route::get('/', [DocumentController::class, 'index'])->name('documents.index');
+        Route::post('/upload', [OrderController::class, 'upload'])->name('orders.upload');
+        //Route::delete('/{document}', [DocumentController::class, 'destroy'])->name('documents.destroy');
+    });
 });
 
 # Роутинг осуществляется React приложением

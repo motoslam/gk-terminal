@@ -11,6 +11,7 @@ use App\Traits\RespondsWithHttpStatus;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use App\Http\Filters\DocumentFilter;
+use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends Controller
 {
@@ -40,7 +41,9 @@ class DocumentController extends Controller
 
         if ($request->post('for') == 'company') {
 
-            $company = Company::findOrFail($request->post('id'));
+            $company = Company::findOrFail(
+                $request->post('id')
+            );
 
             $path = $request->file('file')->store(
                 'documents/company/' . $company->id . '/' . date('dmy')
@@ -55,11 +58,7 @@ class DocumentController extends Controller
 
         } elseif ($request->post('for') == 'vehicle') {
 
-            $vehicle = Vehicle::where('docnum', $request->post('id'))->first();
-
-            if (!$vehicle) {
-                return $this->failure('Not found.', 404);
-            }
+            $vehicle = Vehicle::findOrFail($request->post('id'));
 
             $path = $request->file('file')->store(
                 'documents/vehicle/' . $vehicle->id . '/' . date('dmy')
@@ -76,5 +75,14 @@ class DocumentController extends Controller
             return $this->failure('Failed.', 400);
         }
 
+    }
+
+    public function destroy(Document $document)
+    {
+        Storage::delete($document->path);
+
+        $document->delete();
+
+        return $this->success('Success.');
     }
 }
