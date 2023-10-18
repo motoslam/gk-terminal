@@ -93,6 +93,8 @@ class CompanyController extends Controller
     {
         $company->users()->detach();
 
+        $company->orders()->detach();
+
         $company->delete();
 
         return $this->success('Success.');

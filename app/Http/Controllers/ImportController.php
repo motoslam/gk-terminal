@@ -25,6 +25,8 @@ class ImportController extends Controller
 
         $data = [];
 
+        $i = 1;
+
         foreach ($vehicles as $vehicle) {
 
             $company = Company::firstOrCreate(
@@ -62,23 +64,28 @@ class ImportController extends Controller
                 );
 
                 if ($model) {
-                    $data['docnum_' . $vehicle['docnum']] = [
+                    $data['docnum_' . $i] = [
+                        'docnum' => $vehicle['docnum'],
                         'success' => true,
                         'message' => ''
                     ];
                 } else {
-                    $data['docnum_' . $vehicle['docnum']] = [
+                    $data['docnum_' . $i] = [
+                        'docnum' => $vehicle['docnum'],
                         'success' => false,
                         'message' => ''
                     ];
                 }
 
             } catch (\Exception $exception) {
-                $data[$vehicle['docnum']] = [
+                $data['docnum_' . $i] = [
+                    'docnum' => $vehicle['docnum'],
                     'success' => false,
                     'message' => $exception->getMessage(),
                 ];
             }
+
+            $i++;
 
         }
 

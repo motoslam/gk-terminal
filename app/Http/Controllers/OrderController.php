@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use App\Traits\RespondsWithHttpStatus;
 use App\Http\Filters\OrderFilter;
+use App\Http\Resources\OrderResource;
 
 class OrderController extends Controller
 {
@@ -16,13 +17,15 @@ class OrderController extends Controller
 
     public function index(OrderFilter $filter)
     {
-        return $this->success('Success.');
+        return $this->success('Success.',
+            OrderResource::collection(
+                Order::filter($filter)->get()
+            )
+        );
     }
 
     public function upload(Request $request)
     {
-        return $this->success('debug.', $request->all());
-
         $validator = Validator::make($request->all(), [
             'id' => ['required'],
             'type' => ['required', Rule::in(array_keys(Order::TYPES))],
@@ -34,7 +37,7 @@ class OrderController extends Controller
         }
 
         $vehicle = Vehicle::findOrFail(
-            (int)$request->post('id')
+            $request->post('id')
         );
 
         $path = $request->file('file')->store(

@@ -83,7 +83,7 @@ Route::middleware('auth:sanctum')->prefix('spa')->group(function () {
 
     # Заявки
     Route::prefix('orders')->group(function () {
-        //Route::get('/', [DocumentController::class, 'index'])->name('documents.index');
+        Route::get('/', [OrderController::class, 'index'])->name('orders.index');
         Route::post('/upload', [OrderController::class, 'upload'])->name('orders.upload');
         //Route::delete('/{document}', [DocumentController::class, 'destroy'])->name('documents.destroy');
     });
