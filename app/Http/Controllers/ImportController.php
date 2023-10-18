@@ -52,6 +52,7 @@ class ImportController extends Controller
                         'closingdatedelivery' => parse_date($vehicle['closingdatedelivery']),
                         'locationcar' => $vehicle['locationcar'],
                         'numberdt' => $vehicle['numberdt'],
+                        'statusdt' => $vehicle['statusdt'],
                         'inningsdt' => parse_date($vehicle['inningsdt']),
                         'releasedt' => parse_date($vehicle['releasedt']),
                         'specialistinformation' => $vehicle['specialistinformation'],

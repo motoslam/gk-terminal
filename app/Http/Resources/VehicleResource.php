@@ -24,6 +24,7 @@ class VehicleResource extends JsonResource
             'closingdatedelivery' => $this->closingdatedelivery,
             'locationcar' => $this->locationcar,
             'numberdt' => $this->numberdt,
+            'statusdt' => $this->statusdt,
             'inningsdt' => $this->inningsdt,
             'releasedt' => $this->releasedt,
             'specialistinformation' => $this->specialistinformation,

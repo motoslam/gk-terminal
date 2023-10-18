@@ -24,6 +24,7 @@ class CreateVehiclesTable extends Migration
             $table->dateTime('closingdatedelivery')->nullable();
             $table->string('locationcar');
             $table->string('numberdt')->nullable();
+            $table->string('statusdt')->nullable();
             $table->dateTime('inningsdt')->nullable();
             $table->dateTime('releasedt')->nullable();
             $table->string('specialistinformation')->nullable();

@@ -34,11 +34,12 @@ class RegisterMail extends Mailable
     {
         return $this->markdown('emails.register')
             ->from(
-                env("MAIL_FROM_ADDRESS", 'no-reply@vinlam.ru'),
+                env("MAIL_FROM_ADDRESS", 'no-reply@rterminal.ru'),
                 env("MAIL_FROM_NAME", 'ГК Терминал'),
             )
             ->subject('Создание учетной записи')
             ->with([
+                'email' => $this->data['email'],
                 'password' => $this->data['password'],
                 'role' => User::ROLES[$this->data['role']],
                 'url' => url()->to('/')

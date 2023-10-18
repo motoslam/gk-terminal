@@ -26,7 +26,7 @@ class RegisterController extends Controller
             ]);
 
             $password = Str::random(8);
-            $password = 'password';
+            //$password = 'password';
 
             $credentials['password'] = Hash::make($password);
 
@@ -35,6 +35,7 @@ class RegisterController extends Controller
             if ($user) {
                 try {
                     Mail::to($user)->send(new RegisterMail([
+                        'email' => $user->email,
                         'password' => $password,
                         'role' => $user->role
                     ]));
