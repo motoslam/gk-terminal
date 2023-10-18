@@ -89,10 +89,6 @@ class ImportController extends Controller
 
         }
 
-        //terminal_db
-        //terminal_user
-        //H7f9T6x1
-
         return $this->success(
             'Completed.',
             $data
