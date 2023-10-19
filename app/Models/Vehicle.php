@@ -23,6 +23,7 @@ class Vehicle extends Model
         'closingdatedelivery',         # Дата и время закрытия доставки
         'locationcar',                 # Местонахождение ТС
         'numberdt',                    # Номер ДТ
+        'statusdt',                    # Статус ДТ
         'inningsdt',                   # Дата и время подачи ДТ
         'releasedt',                   # Дата и время выпуска ДТ
         'specialistinformation',       # Информация о специалисте ТО

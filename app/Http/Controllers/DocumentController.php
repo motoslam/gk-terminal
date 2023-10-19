@@ -46,7 +46,8 @@ class DocumentController extends Controller
             );
 
             $path = $request->file('file')->store(
-                'documents/company/' . $company->id . '/' . date('dmy')
+                'documents/company/' . $company->id . '/' . date('dmy'),
+                'public'
             );
 
             $company->documents()->create([
@@ -61,7 +62,8 @@ class DocumentController extends Controller
             $vehicle = Vehicle::findOrFail($request->post('id'));
 
             $path = $request->file('file')->store(
-                'documents/vehicle/' . $vehicle->id . '/' . date('dmy')
+                'documents/vehicle/' . $vehicle->id . '/' . date('dmy'),
+                'public'
             );
 
             $vehicle->documents()->create([

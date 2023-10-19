@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Traits\RespondsWithHttpStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -33,6 +34,12 @@ class RegisterController extends Controller
             $user = User::create($credentials);
 
             if ($user) {
+
+                if ($user->isManager()) {
+                    $companies = Company::all();
+                    $user->companies()->attach($companies);
+                }
+
                 try {
                     Mail::to($user)->send(new RegisterMail([
                         'email' => $user->email,

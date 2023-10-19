@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="some fixed 2">
+    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="add statusdt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DocumentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DocumentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/VehicleResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/VehicleResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/RegisterMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/RegisterMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2023_09_19_155517_create_vehicles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_09_19_155517_create_vehicles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Vehicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Vehicle.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +239,12 @@
       <workItem from="1697638692467" duration="918000" />
       <workItem from="1697640879418" duration="299000" />
       <workItem from="1697641256030" duration="264000" />
-      <workItem from="1697644021396" duration="125000" />
+      <workItem from="1697644021396" duration="206000" />
+      <workItem from="1697704113841" duration="315000" />
+      <workItem from="1697704484029" duration="10000" />
+      <workItem from="1697705047858" duration="60000" />
+      <workItem from="1697705130392" duration="729000" />
+      <workItem from="1697706400108" duration="203000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -388,7 +390,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697625859847</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add statusdt">
+      <option name="closed" value="true" />
+      <created>1697644168738</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1697644168738</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +432,8 @@
     <MESSAGE value="orders" />
     <MESSAGE value="some fixed" />
     <MESSAGE value="some fixed 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="some fixed 2" />
+    <MESSAGE value="add statusdt" />
+    <option name="LAST_COMMIT_MESSAGE" value="add statusdt" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
