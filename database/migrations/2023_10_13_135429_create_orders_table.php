@@ -15,9 +15,10 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vehicle_id');
             $table->string('type');
             $table->string('path');
+            $table->string('orderable_id');
+            $table->string('orderable_type');
             $table->timestamps();
         });
     }

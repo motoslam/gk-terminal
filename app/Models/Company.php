@@ -40,4 +40,9 @@ class Company extends Model
         return $this->morphMany(Document::class, 'documentable');
     }
 
+    public function orders()
+    {
+        return $this->morphMany(Order::class, 'orderable');
+    }
+
 }

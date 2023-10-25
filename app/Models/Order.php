@@ -12,20 +12,21 @@ class Order extends Model
 
     const TYPES = [
         'd' => 'Досмотр',
-        'v' => 'Выгрузка'
+        'o' => 'Осмотр',
+        'v' => 'Выгрузка',
+        'a' => 'Выгрузка без ТС'
     ];
 
     protected $fillable = [
-        'vehicle_id',
+        'orderable_id',
+        'orderable_type',
         'type',
         'path'
     ];
 
-
-
-    public function vehicle()
+    public function orderable()
     {
-        return $this->belongsTo(Vehicle::class);
+        return $this->morphTo();
     }
 
 }

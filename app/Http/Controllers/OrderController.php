@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Company;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -36,20 +37,43 @@ class OrderController extends Controller
             return $this->failure($validator->errors(), 422);
         }
 
-        $vehicle = Vehicle::findOrFail(
-            $request->post('id')
-        );
+        if ($request->post('type') == 'a') {
 
-        $path = $request->file('file')->store(
-            'orders/' . $vehicle->id
-        );
+            $company = Company::findOrFail(
+                $request->post('id')
+            );
 
-        $vehicle->orders()->create([
-            'type' => $request->type,
-            'path' => $path
-        ]);
+            $path = $request->file('file')->store(
+                'orders/a/' . $company->id,
+                'public'
+            );
+
+            $company->orders()->create([
+                'type' => $request->type,
+                'path' => $path
+            ]);
+
+        } else {
+
+            $vehicle = Vehicle::findOrFail(
+                $request->post('id')
+            );
+
+            $path = $request->file('file')->store(
+                'orders/' . $vehicle->id,
+                'public'
+            );
+
+            $vehicle->orders()->create([
+                'type' => $request->type,
+                'path' => $path
+            ]);
+
+        }
 
         return $this->success('Success.');
 
     }
+
+
 }

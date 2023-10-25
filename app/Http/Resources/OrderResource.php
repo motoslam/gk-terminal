@@ -19,8 +19,9 @@ class OrderResource extends JsonResource
             'id' => $this->id,
             'type' => $this->type,
             'company_name' => $this->vehicle->company->name ?: '',
-            'numbercar' => $this->vehicle->numbercar,
-            'locationcar' => $this->vehicle->locationcar,
+            'numbercar' => $this->vehicle->numbercar ?: '',
+            'numbertrailer' => $this->vehicle->numbertrailer ?: '',
+            'locationcar' => $this->vehicle->locationcar ?: '',
             'link' => Storage::url($this->path),
             'created_at' => $this->created_at
         ];

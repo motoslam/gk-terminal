@@ -56,7 +56,7 @@ class Vehicle extends Model
 
     public function orders()
     {
-        return $this->hasMany(Order::class);
+        return $this->morphMany(Order::class, 'orderable');
     }
 
 }
