@@ -10,6 +10,7 @@ abstract class QueryFilter
 {
     protected $request;
     protected $builder;
+    protected $delimiter = ',';
 
     public function __construct(Request $request)
     {
@@ -33,5 +34,10 @@ abstract class QueryFilter
         return array_filter(
             array_map('trim', $this->request->all())
         );
+    }
+
+    protected function paramToArray($param)
+    {
+        return explode($this->delimiter, $param);
     }
 }

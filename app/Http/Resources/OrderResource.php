@@ -15,13 +15,20 @@ class OrderResource extends JsonResource
      */
     public function toArray($request)
     {
+
+        if($this->orderable_type == 'App\Models\Company') {
+            $name = $this->orderable->name;
+        } else {
+            $name = $this->orderable->company->name;
+        }
+
         return [
             'id' => $this->id,
             'type' => $this->type,
-            'company_name' => $this->vehicle->company->name ?: '',
-            'numbercar' => $this->vehicle->numbercar ?: '',
-            'numbertrailer' => $this->vehicle->numbertrailer ?: '',
-            'locationcar' => $this->vehicle->locationcar ?: '',
+            'company_name' => $name ?: '',
+            'numbercar' => $this->orderable->numbercar ?: '',
+            'numbertrailer' => $this->orderable->numbertrailer ?: '',
+            'locationcar' => $this->orderable->locationcar ?: '',
             'link' => Storage::url($this->path),
             'created_at' => $this->created_at
         ];

@@ -7,10 +7,8 @@ use App\Models\Order;
 
 class OrderFilter extends QueryFilter
 {
-    public function type(string $type)
+    public function type($types)
     {
-        if (in_array($type, array_keys(Order::TYPES))) {
-            $this->builder->where('type', $type);
-        }
+        $this->builder->whereIn('type', $this->paramToArray($types));
     }
 }
