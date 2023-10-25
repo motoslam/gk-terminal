@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="Order relations is orderable">
+    <list default="true" id="e29f0320-9ca3-44a3-ae3d-8b78707606a5" name="Changes" comment="add orderable on resource">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Filters/OrderFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Filters/OrderFilter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Filters/QueryFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Filters/QueryFilter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/OrderResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/OrderResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Document.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Document.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +249,8 @@
       <workItem from="1697810366144" duration="1872000" />
       <workItem from="1698155072433" duration="99000" />
       <workItem from="1698222929400" duration="2047000" />
-      <workItem from="1698227493569" duration="873000" />
+      <workItem from="1698227493569" duration="910000" />
+      <workItem from="1698247391137" duration="557000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -420,7 +420,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698224582214</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="add orderable on resource">
+      <option name="closed" value="true" />
+      <created>1698228391931</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1698228391931</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +465,8 @@
     <MESSAGE value="add statusdt" />
     <MESSAGE value="attach all companies at new manager" />
     <MESSAGE value="Order relations is orderable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Order relations is orderable" />
+    <MESSAGE value="add orderable on resource" />
+    <option name="LAST_COMMIT_MESSAGE" value="add orderable on resource" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
